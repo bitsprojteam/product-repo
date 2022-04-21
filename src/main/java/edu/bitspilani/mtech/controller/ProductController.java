@@ -24,8 +24,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import edu.bitspilani.mtech.dto.Error;
 import edu.bitspilani.mtech.dto.ProductDTO;
+import edu.bitspilani.mtech.dto.Error;
 import edu.bitspilani.mtech.model.Product;
 import edu.bitspilani.mtech.model.ResponseModel;
 import edu.bitspilani.mtech.repository.ProductRepository;
@@ -81,7 +81,7 @@ private static final Logger logger = LoggerFactory.getLogger(ProductController.c
 		}
 	}
 
-	//@GetMapping("/product/code/{code}")
+	
 	@GetMapping(value="/product/code/{code}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> getByCode(@PathVariable("code") String code) {
 		
@@ -113,6 +113,9 @@ private static final Logger logger = LoggerFactory.getLogger(ProductController.c
 		}
 			
 	}
+	
+	
+	
 	
 	@PutMapping(value="/product", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> update(@RequestPart String productData ) throws IOException {
